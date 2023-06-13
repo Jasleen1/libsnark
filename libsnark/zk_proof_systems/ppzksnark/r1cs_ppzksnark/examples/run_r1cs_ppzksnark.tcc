@@ -77,7 +77,9 @@ bool run_r1cs_ppzksnark(const r1cs_example<libff::Fr<ppT> > &example,
     {
         libff::enter_block("Test serialization of keys");
         keypair.pk = libff::reserialize<r1cs_ppzksnark_proving_key<ppT> >(keypair.pk);
+        // Write here for prover key 
         keypair.vk = libff::reserialize<r1cs_ppzksnark_verification_key<ppT> >(keypair.vk);
+        // Write here for verifier key
         pvk = libff::reserialize<r1cs_ppzksnark_processed_verification_key<ppT> >(pvk);
         libff::leave_block("Test serialization of keys");
     }
@@ -90,6 +92,7 @@ bool run_r1cs_ppzksnark(const r1cs_example<libff::Fr<ppT> > &example,
     {
         libff::enter_block("Test serialization of proof");
         proof = libff::reserialize<r1cs_ppzksnark_proof<ppT> >(proof);
+        // Write here for the proof 
         libff::leave_block("Test serialization of proof");
     }
 
